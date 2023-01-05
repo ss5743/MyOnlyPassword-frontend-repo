@@ -1,0 +1,19 @@
+<!-- <passwords></passwords> -->
+<div class="container header">
+  <h1 id="h1">Password manager</h1>
+</div>
+<div class="container crud">
+  <button mat-raised-button id="add-btn" class="crud-btn" color="primary" routerLink="add-password">
+    <h3>Add Password</h3>
+  </button>
+  <button mat-raised-button id="see-btn" class="crud-btn" color="primary" routerLink="view-passwords">
+    <h3>View Password</h3>
+  </button>
+  <!-- <button mat-raised-button id="update-btn" class="crud-btn" color="primary">
+      <h3>Update Password</h3>
+    </button> -->
+  <button mat-raised-button id="delete-btn" class="crud-btn" color="primary" routerLink="">
+    <h3>Hide Passwords</h3>
+  </button>
+</div>
+<router-outlet></router-outlet>
