@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormGroup, NgForm } from '@angular/forms';
+import { ApiService } from 'app/api.service';
 
 @Component({
   selector: 'add-password',
@@ -11,38 +12,22 @@ export class AddPasswordComponent {
 
   url:any= 'http://localhost:8080/passwords';
 
-  constructor(private http: HttpClient){
-
-  }
-  //x = document.getElementById("url-pass");
-  //console.log(x);
+  constructor(private http: HttpClient,private api:ApiService){}
   
   submit(data:any,values:NgForm){
-    //console.log(x)
-    
-
-    this.http.post(this.url,data).subscribe((data)=>{
-      //console.log(data)
-    })
-
+    this.api.addPass(data).subscribe()
     values.reset();
-    // let passSaver:any = document.getElementById("h4")?.innerHTML;
-    // passSaver="Password saved";
-  }
+    }
 
-  showPass(){
+  showPassVisible(){
     var x:any= document.getElementById("password");
     if (x.type === "password") {
       x.type = "text";
     } else {
       x.type = "password";
     }
-    //console.log(x);
   }
-
-   //submit(f: any){ console.log(f)  }
-
    savePassword(){
-      
+    //display span to tell password saved in future
    }
 }
